@@ -8,7 +8,7 @@ using Torque3D.Util;
 
 namespace Turing
 {
-    class DodgeState : State
+    class HarlemShakeState : State
     {
         private bool move = false;
         private int rotations = 10;
@@ -20,7 +20,7 @@ namespace Turing
 
         public enum TurnDirection { RIGHT, LEFT }
 
-        public DodgeState(State nextState, FeatureVector vector, int ticks)
+        public HarlemShakeState(State nextState, FeatureVector vector, int ticks)
         {
             this.nextState = nextState;
             this.ticks = ticks;
@@ -34,6 +34,7 @@ namespace Turing
             {
                 return new AimForEnemyState(this).tick(ref action, vector, controller);
             }
+
 
             if (vector.TicksSinceObservedEnemy > ticks)
             {

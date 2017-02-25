@@ -29,13 +29,13 @@ namespace Turing
 
                 //While reloading, let's get closer
                 //TODO: Make a more fancy "getting" close state
-                return new DodgeState(new PrepState(this), vector, 7).tick(ref action, vector, controller);
+                return new HarlemShakeState(new PrepState(this), vector, 7).tick(ref action, vector, controller);
             }
 
             if (vector.TicksSinceObservedEnemy < 5)
             {
                 rotationCount = 0;
-                return new DodgeState(new PrepState(this), vector, 40).tick(ref action, vector, controller);
+                return new HarlemShakeState(new PrepState(this), vector, 40).tick(ref action, vector, controller);
             }
 
             //If at a wall then rotate
