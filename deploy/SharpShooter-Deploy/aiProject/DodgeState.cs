@@ -14,16 +14,16 @@ namespace Turing
         private int rotations = 10;
         private TurnDirection dir;
 
-        private int tiks;
+        private int ticks;
 
         private State nextState;
 
         public enum TurnDirection { RIGHT, LEFT }
 
-        public DodgeState(State nextState, FeatureVector vector, int tiks)
+        public DodgeState(State nextState, FeatureVector vector, int ticks)
         {
             this.nextState = nextState;
-            this.tiks = tiks;
+            this.ticks = ticks;
             dir = vector.DeltaRot >= 0 ? TurnDirection.RIGHT : TurnDirection.LEFT;
         }
 
@@ -35,7 +35,7 @@ namespace Turing
                 return new AimForEnemyState(this).tick(ref action, vector, controller);
             }
 
-            if (vector.TicksSinceObservedEnemy > tiks)
+            if (vector.TicksSinceObservedEnemy > ticks)
             {
                 return nextState;
             }
@@ -61,7 +61,7 @@ namespace Turing
            }
 
            //Keep looking
-           tiks++;
+           ticks++;
            return new PrepState(this);
         }
     }

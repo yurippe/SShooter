@@ -12,6 +12,7 @@ namespace Turing
     {
         private int move = 0;
         private int rotations = 0;
+        private int rotationCount = 0;
         private TurnDirection dir = TurnDirection.LEFT;
 
         public enum TurnDirection { RIGHT, LEFT }
@@ -21,6 +22,7 @@ namespace Turing
             //We see the enemy, let's engage
             if (vector.DamageProb > 0)
             {
+                rotationCount = 0;
                 //Close to shooting
                 if(vector.ShootDelay <3)
                     return new AimForEnemyState(this).tick(ref action, vector, controller);
@@ -33,6 +35,7 @@ namespace Turing
 
             if (vector.TicksSinceObservedEnemy < 5)
             {
+                rotationCount = 0;
                 return new DodgeState(new PrepState(this), vector, 40);
             }
 
@@ -44,7 +47,11 @@ namespace Turing
             if (leftDistance < CRITICAL_DISTANCE || rightDistance < CRITICAL_DISTANCE)
             {
                 float angle = 20F;
-                if (leftDistance < CRITICAL_DISTANCE && rightDistance < CRITICAL_DISTANCE)
+                if (rotationCount++ > 2)
+                {
+                    angle = 180F;
+                }
+                else if (leftDistance < CRITICAL_DISTANCE && rightDistance < CRITICAL_DISTANCE)
                 {
                     angle = 90F;
                 }
@@ -55,6 +62,7 @@ namespace Turing
                                              angle
                     ).tick(ref action, vector, controller));
             }
+            rotationCount = 0;
 
             //Should we move or rotate this time?
             if (move > 0)
