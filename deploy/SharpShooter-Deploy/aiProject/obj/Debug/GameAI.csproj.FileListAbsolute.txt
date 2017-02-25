@@ -3,3 +3,4 @@ C:\Users\Kristian\Desktop\SShooter\deploy\SharpShooter-Deploy\aiLibs\Turing.pdb
 C:\Users\Kristian\Desktop\SShooter\deploy\SharpShooter-Deploy\aiProject\obj\Debug\GameAI.csprojResolveAssemblyReference.cache
 C:\Users\Kristian\Desktop\SShooter\deploy\SharpShooter-Deploy\aiProject\obj\Debug\Turing.dll
 C:\Users\Kristian\Desktop\SShooter\deploy\SharpShooter-Deploy\aiProject\obj\Debug\Turing.pdb
+C:\Users\Steffan\Documents\GitHub\SShooter\deploy\SharpShooter-Deploy\aiProject\obj\Debug\GameAI.csprojResolveAssemblyReference.cache

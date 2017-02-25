@@ -15,7 +15,6 @@ namespace Turing
             action = PlayerAction.Prepare;
 
             return new TurnXDegreesState(new NOPState(), TurnXDegreesState.TurnDirection.RIGHT, 45);
-
         }
     }
 }
