@@ -12,29 +12,34 @@ namespace Turing
     {
         public State tick(ref PlayerAction action, FeatureVector vector, StateController controller)
         {
-            //TODO: Do all wavering searching
-            if (controller.isPrepMove())
+            if (controller.isPrepMove() && !controller.hasPrepped())
             {
                 action = PlayerAction.Prepare;
+                return this;
             }
 
 
             //TODO: If at a wall then rotate randomly
             float leftDistance = vector.DistanceToObstacleLeft;
             float rightDistance = vector.DistanceToObstacleRight;
+            int CRITICAL_DISTANCE = 5;
 
-            if (leftDistance < 5 && rightDistance < 5)
+            if (leftDistance < CRITICAL_DISTANCE || rightDistance < CRITICAL_DISTANCE)
             {
-                action =
+                float angle = 20F;
+                if (leftDistance < CRITICAL_DISTANCE && rightDistance < CRITICAL_DISTANCE)
+                {
+                    angle = 70F;
+                }
+                return new TurnXDegreesState(this,
+                                             leftDistance < rightDistance ?
+                                                TurnXDegreesState.TurnDirection.RIGHT
+                                              : TurnXDegreesState.TurnDirection.LEFT,
+                                             angle
+                    ).tick(ref action, vector, controller);
             }
-            else if (leftDistance < 5)
-            {
 
-            }
-            else if (rightDistance < 5)
-            {
-
-            }
+            //TODO: Do all wavering searching
 
             //TODO: If about changing to sidestepping
             //Are currently seeing the enemy, overwrite all of this with said state
