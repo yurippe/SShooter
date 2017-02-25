@@ -64,6 +64,10 @@ namespace Turing
 
         private State overrideState(FeatureVector vector)
         {
+            if (vector.TickCount > 2 && wasShotLastRound(vector))
+            {
+                return new LoopAimUntillFindState();
+            }
 
             if (vector.TickCount == 3200)
             {
