@@ -41,7 +41,7 @@ namespace Turing
                 float angle = 20F;
                 if (leftDistance < CRITICAL_DISTANCE && rightDistance < CRITICAL_DISTANCE)
                 {
-                    angle = 70F;
+                    angle = 90F;
                 }
                 return new PrepState(new TurnXDegreesState(this,
                                              leftDistance < rightDistance ?
@@ -63,6 +63,7 @@ namespace Turing
                 if (rotations > 0)
                 {
                     action = dir == TurnDirection.LEFT ? PlayerAction.TurnLeft : PlayerAction.TurnRight;
+                    rotations--;
                 }
                 else
                 {
