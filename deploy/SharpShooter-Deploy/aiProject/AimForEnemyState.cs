@@ -26,7 +26,7 @@ namespace Turing
             {
                 if (direction == AimForEnemyDirection.LEFT) {
                     action = PlayerAction.TurnLeft;
-                }
+                } else
                 {
                     action = PlayerAction.TurnRight;
                 }
@@ -38,15 +38,28 @@ namespace Turing
                 if (direction == AimForEnemyDirection.LEFT)
                 {
                     action = PlayerAction.TurnRight;
-                }
+                    return new AimForEnemyState(nextState, AimForEnemyDirection.RIGHT);
+                } else
                 {
                     action = PlayerAction.TurnLeft;
+                    return new AimForEnemyState(nextState, AimForEnemyDirection.LEFT);
                 }
-                return nextState;
+            } else if(vector.DeltaDamageProb > 0)
+            {
+                if (direction == AimForEnemyDirection.LEFT)
+                {
+                    action = PlayerAction.TurnLeft;
+                    return new AimForEnemyState(nextState, AimForEnemyDirection.LEFT);
+                }
+                else
+                {
+                    action = PlayerAction.TurnRight;
+                    return new AimForEnemyState(nextState, AimForEnemyDirection.RIGHT);
+                }
             } else
             {
               action = PlayerAction.Prepare;
-              return nextState;
+              return this;
             }
         }
     }
