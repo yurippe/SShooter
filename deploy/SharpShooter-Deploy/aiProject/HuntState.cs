@@ -31,6 +31,11 @@ namespace Turing
                 return new PrepState(this);
             }
 
+            if (vector.TicksSinceObservedEnemy < 5)
+            {
+                return new DodgeState(new PrepState(this), vector, 40);
+            }
+
             //If at a wall then rotate
             float leftDistance = vector.DistanceToObstacleLeft;
             float rightDistance = vector.DistanceToObstacleRight;
@@ -56,7 +61,7 @@ namespace Turing
             {
                 action = PlayerAction.MoveForward;
                 move--;
-                rotations = dir == TurnDirection.RIGHT ? 10 : 5;
+                rotations = 8;
             }
             else
             {
