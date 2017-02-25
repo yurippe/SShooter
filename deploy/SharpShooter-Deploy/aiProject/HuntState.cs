@@ -29,12 +29,12 @@ namespace Turing
                 {
                     angle = 70F;
                 }
-                return new TurnXDegreesState(this,
+                return new PrepState(new TurnXDegreesState(this,
                                              leftDistance < rightDistance ?
                                                 TurnXDegreesState.TurnDirection.RIGHT
                                               : TurnXDegreesState.TurnDirection.LEFT,
                                              angle
-                    ).tick(ref action, vector, controller);
+                    ).tick(ref action, vector, controller));
             }
 
             //TODO: Do all wavering searching
@@ -43,7 +43,7 @@ namespace Turing
             //Are currently seeing the enemy, overwrite all of this with said state
 
             //Keep hunting him down
-            return this;
+            return new PrepState(this);
         }
     }
 }
