@@ -10,7 +10,7 @@ namespace Turing
 {
     class HuntState : State
     {
-        private int move = 5;
+        private int move = 10;
         private int rotations = 0;
         private TurnDirection dir = TurnDirection.LEFT;
 
@@ -23,7 +23,7 @@ namespace Turing
             {
                 //Close to shooting
                 if(vector.ShootDelay <3)
-                    return new AimForEnemyState(new PrepState(this)).tick(ref action, vector, controller);
+                    return new AimForEnemyState(this).tick(ref action, vector, controller);
 
                 //While reloading, let's get closer
                 //TODO: Make a more fancy "getting" close state
@@ -56,7 +56,7 @@ namespace Turing
             {
                 action = PlayerAction.MoveForward;
                 move--;
-                rotations = 3;
+                rotations = dir == TurnDirection.RIGHT ? 10 : 5;
             }
             else
             {
@@ -68,7 +68,7 @@ namespace Turing
                 else
                 {
                     dir = dir == TurnDirection.LEFT ? TurnDirection.RIGHT : TurnDirection.LEFT;
-                    move = 5;
+                    move = 10;
                 }
             }
 
