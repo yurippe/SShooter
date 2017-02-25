@@ -23,7 +23,7 @@ namespace Turing
             {
                 //Close to shooting
                 if(vector.ShootDelay <3)
-                    return new AimForEnemyState(new PrepState(this)).tick(ref action, vector, controller);
+                    return new AimForEnemyState(this).tick(ref action, vector, controller);
 
                 //While reloading, let's get closer
                 //TODO: Make a more fancy "getting" close state
