@@ -1,0 +1,335 @@
+//-------------------------- 2/24/2017 -- 14:50:05 -----
+Warning: forcing the Torque profiler thread to run only on cpu 1.
+Processor Init:
+   Intel Core, ~2.21 Ghz
+   FPU detected
+   MMX detected
+   SSE detected
+   SSE2 detected
+   HT detected
+   MP detected [2 cores, 4 logical, 1 physical]
+ 
+Math Init:
+   Installing Standard C extensions
+   Installing Assembly extensions
+   Installing FPU extensions
+   Installing MMX extensions
+   Installing SSE extensions
+ 
+Initializing platform...
+Input Init:
+   keyboard0 input device created.
+   mouse0 input device created.
+   DirectInput enabled.
+
+Done
+DebugDrawer Enabled!
+GFX Init:
+   Null device found
+   Direct 3D (version 9.x) device found
+
+GFXStringEnumTranslate: Unassigned value in GFXStringTextureFormat: 22
+GFXStringEnumTranslate: Unassigned value in GFXStringTextureFormat: 23
+Console trace disabled.
+Executing data/defaults.cs.
+
+--------- Parsing Arguments ---------
+Attempting to create GFX device: Intel(R) Iris(TM) Graphics 540 (D3D9) [\\.\DISPLAY1]
+Device created, setting adapter and enumerating modes
+   Cur. D3DDevice ref count=1
+   Pix version detected: 3.000000
+   Vert version detected: 3.000000
+   Maximum number of simultaneous samplers: 16
+   Number of simultaneous render targets: 4
+   Hardware occlusion query detected: Yes
+   Using Direct3D9Ex: No
+Initializing GFXCardProfiler (D3D9)
+   o Chipset : ''
+   o Card    : ''
+   o Version : ''
+   o VRAM    : 0 MB
+   - Scanning card capabilities...
+GFXCardProfiler (D3D9) - Setting capability 'autoMipMapLevel' to 1.
+GFXCardProfiler (D3D9) - Setting capability 'maxTextureWidth' to 8192.
+GFXCardProfiler (D3D9) - Setting capability 'maxTextureHeight' to 8192.
+GFXCardProfiler (D3D9) - Setting capability 'maxTextureSize' to 8192.
+GFXCardProfiler (D3D9) - Setting capability 'lerpDetailBlend' to 1.
+GFXCardProfiler (D3D9) - Setting capability 'fourStageDetailBlend' to 1.
+GFXCardProfiler (D3D9) - Setting capability 'independentMrtBitDepth' to 1.
+   - Loading card profiles...
+      - Loaded card profile core/gfxprofile/D3D9.cs
+      - No card profile core/gfxprofile/D3D9..cs exists
+      - No card profile core/gfxprofile/D3D9...cs exists
+      - No card profile core/gfxprofile/D3D9....cs exists
+Win32Window::WindowProc - resetting device due to window size change.
+GFXPCD3D9Device::reset - depthstencil 77b3400 has 2 ref's
+--- Resetting D3D Device ---
+[Win32FileSystemChangeNotifier::internalAddNotification] : failed on [C:\Speciale\Game\SharpShooter-Deploy\????s] [123]
+--------------
+Attempting to set resolution to "1024 768 False 32 60 4"
+Accepted Mode: 
+--Resolution : 1024 768
+--Full Screen : No 
+--Bits Per Pixel : 32 
+--Refresh Rate : 60 
+--FSAA Level : 4 
+--------------
+GFXPCD3D9Device::reset - depthstencil 77b3720 has 2 ref's
+--- Resetting D3D Device ---
+GFXPCD3D9Device::reset - depthstencil 77b3c20 has 2 ref's
+--- Resetting D3D Device ---
+
+sfxStartup...
+SFXSystem::createDevice - created Null device 'SFX Null Device'
+   Provider: Null
+   Device: SFX Null Device
+   Hardware: No
+   Buffers: 268435456
+ 
+Binding server port to default IP
+UDP initialized on port 0
+--------------------------------------------------------------------------------
+Module Manager: Started scanning 'C:/Speciale/Game/SharpShooter-Deploy/data'...
+Module Manager: Registering: 'C:/Speciale/Game/SharpShooter-Deploy/data/clientServer/ClientServer.module' [ ID='ClientServer', VersionId='1', BuildId='0', Description='Default module for the game.' ].
+Module Manager: Registering: 'C:/Speciale/Game/SharpShooter-Deploy/data/postFX/postFX.module' [ ID='PostFX', VersionId='1', BuildId='0', Description='Default PostFX elements' ].
+Module Manager: Registering: 'C:/Speciale/Game/SharpShooter-Deploy/data/spectatorGameplay/SpectatorGameplay.module' [ ID='SpectatorGameplay', VersionId='1', BuildId='0', Description='Default module for the game.' ].
+Module Manager: Registering: 'C:/Speciale/Game/SharpShooter-Deploy/data/ui/UI.module' [ ID='UI', VersionId='1', BuildId='0', Description='Module that implements the menus for the game.' ].
+Module Manager: Finished scanning 'C:/Speciale/Game/SharpShooter-Deploy/data'.
+--------------------------------------------------------------------------------
+Module Manager: Loading group 'Game':
+Module Manager: Group 'Game' and its dependencies is comprised of the following '4' module(s):
+> module Id 'ClientServer' at version Id '1':
+> module Id 'PostFX' at version Id '1':
+> module Id 'UI' at version Id '1':
+> module Id 'SpectatorGameplay' at version Id '1':
+--------------------------------------------------------------------------------
+Module Manager: Loading group 'Game' : module Id 'ClientServer' at version Id '1' in group 'Game' using the script file ''.
+Adding path expando of 'ClientServer' as 'C:/Speciale/Game/SharpShooter-Deploy/data/clientServer'.
+
+--------- Initializing Directory: scripts ---------
+
+--------- Initializing BaseGame: Server Scripts ---------
+C:/Users/lukas/Documents
+Executing C:/Users/lukas/Documents/BaseGame/preferences/serverPrefs.cs.
+
+--------- Initializing BaseGame: Client Scripts ---------
+C:/Users/lukas/Documents
+Executing C:/Users/lukas/Documents/BaseGame/preferences/clientPrefs.cs.
+Executing core/images/materials.cs.
+Executing data/spectatorGameplay/art/environment/materials.cs.
+Executing data/spectatorGameplay/art/GameShapes/materials.cs.
+Executing data/spectatorGameplay/art/lights/materials.cs.
+Executing data/spectatorGameplay/art/misc/materials.cs.
+Executing data/spectatorGameplay/art/particles/ribbon/materials.cs.
+Executing data/spectatorGameplay/art/roads/materials.cs.
+Executing data/spectatorGameplay/art/shapes/materials.cs.
+Executing data/spectatorGameplay/art/skies/Blank_sky/materials.cs.
+Executing data/spectatorGameplay/art/skies/night/materials.cs.
+--------------------------------------------------------------------------------
+Module Manager: Loading group 'Game' : module Id 'PostFX' at version Id '1' in group 'Game' using the script file 'C:/Speciale/Game/SharpShooter-Deploy/data/postFX/postFX.cs'.
+Adding path expando of 'PostFX' as 'C:/Speciale/Game/SharpShooter-Deploy/data/postFX'.
+Executing C:/Speciale/Game/SharpShooter-Deploy/data/postFX/postFX.cs.
+
+--------- Initializing PostFX Directory: scripts ---------
+Executing data/postFX/scripts/gui/postFxManager.gui.
+Executing data/postFX/scripts/client/caustics.cs.
+Executing data/postFX/scripts/client/chromaticLens.cs.
+Executing data/postFX/scripts/client/default.postfxpreset.cs.
+Executing data/postFX/scripts/client/dof.cs.
+Executing data/postFX/scripts/client/edgeAA.cs.
+Executing data/postFX/scripts/client/flash.cs.
+Executing data/postFX/scripts/client/fog.cs.
+Executing data/postFX/scripts/client/fxaa.cs.
+Executing data/postFX/scripts/client/GammaPostFX.cs.
+Executing data/postFX/scripts/client/glow.cs.
+Executing data/postFX/scripts/client/hdr.cs.
+Executing data/postFX/scripts/client/lightRay.cs.
+Executing data/postFX/scripts/client/MLAA.cs.
+Executing data/postFX/scripts/client/MotionBlurFx.cs.
+Executing data/postFX/scripts/client/ovrBarrelDistortion.cs.
+Executing data/postFX/scripts/client/postFxManager.gui.cs.
+Executing data/postFX/scripts/client/postFxManager.gui.settings.cs.
+Executing data/postFX/scripts/client/postFxManager.persistance.cs.
+Executing data/postFX/scripts/client/ssao.cs.
+Executing data/postFX/scripts/client/turbulence.cs.
+Executing data/postFX/scripts/client/vignette.cs.
+--------------------------------------------------------------------------------
+Module Manager: Loading group 'Game' : module Id 'UI' at version Id '1' in group 'Game' using the script file 'C:/Speciale/Game/SharpShooter-Deploy/data/ui/UI.cs'.
+Adding path expando of 'UI' as 'C:/Speciale/Game/SharpShooter-Deploy/data/ui'.
+Executing C:/Speciale/Game/SharpShooter-Deploy/data/ui/UI.cs.
+--------------
+Attempting to set resolution to "1024 768 False 32 60 4"
+Accepted Mode: 
+--Resolution : 1024 768
+--Full Screen : No 
+--Bits Per Pixel : 32 
+--Refresh Rate : 60 
+--FSAA Level : 4 
+--------------
+GFXPCD3D9Device::reset - depthstencil 77b41c0 has 2 ref's
+--- Resetting D3D Device ---
+GFXPCD3D9Device::reset - depthstencil 7a84d60 has 2 ref's
+--- Resetting D3D Device ---
+Executing data/ui/scripts/datablocks/guiSounds.cs.
+Loading SFX: data/ui/sound/buttonClick (2 channels, 44 kHz, 0.09 sec, 16 kb)
+Loading SFX: data/ui/sound/buttonHover (2 channels, 44 kHz, 0.23 sec, 39 kb)
+Executing data/ui/scripts/profiles.cs.
+Executing data/ui/scripts/guis/mainMenu.gui.
+Missing file: tools/gui/profiles.ed.cs!
+Executing data/ui/scripts/guis/chooseLevelDlg.gui.
+Executing data/ui/scripts/guis/joinServerMenu.gui.
+Executing data/ui/scripts/guis/loadingGui.gui.
+Executing data/ui/scripts/guis/optionsMenu.gui.
+Executing data/ui/scripts/guis/pauseMenu.gui.
+Executing data/ui/scripts/guis/remapDlg.gui.
+Executing data/ui/scripts/guis/remapConfirmDlg.gui.
+Executing data/ui/scripts/guis/profiler.gui.
+Executing data/ui/scripts/chooseLevelDlg.cs.
+Executing data/ui/scripts/optionsList.cs.
+Executing data/ui/scripts/optionsMenu.cs.
+Executing data/ui/scripts/graphicsMenu.cs.
+Executing data/ui/scripts/controlsMenu.cs.
+Executing data/ui/scripts/chooseLevelDlg.cs.
+Executing data/ui/scripts/mainMenu.cs.
+Executing data/ui/scripts/joinServerMenu.cs.
+Executing data/ui/scripts/pauseMenu.cs.
+--------------------------------------------------------------------------------
+Module Manager: Loading group 'Game' : module Id 'SpectatorGameplay' at version Id '1' in group 'Game' using the script file ''.
+Adding path expando of 'SpectatorGameplay' as 'C:/Speciale/Game/SharpShooter-Deploy/data/spectatorGameplay'.
+Executing data/SpectatorGameplay/scripts/server/VolumetricFog.cs.
+Executing data/SpectatorGameplay/scripts/server/cameraToggle.cs.
+Executing data/spectatorGameplay/scripts/client/default.keybinds.cs.
+C:/Users/lukas/Documents
+Executing data/spectatorGameplay/scripts/client/inputCommands.cs.
+Executing data/SpectatorGameplay/scripts/gui/playGui.gui.
+Executing data/SpectatorGameplay/scripts/gui/Window2.gui.
+Executing data/SpectatorGameplay/scripts/gui/playGui.cs.
+--------------------------------------------------------------------------------
+Module Manager: Finish loading '4' module(s) for group 'Game'.
+--------------------------------------------------------------------------------
+
+Initializing Lighting Systems
+Executing data/defaults.cs.
+--------------
+Attempting to set resolution to "1024 768 False 32 60 4"
+Accepted Mode: 
+--Resolution : 1024 768
+--Full Screen : No 
+--Bits Per Pixel : 32 
+--Refresh Rate : 60 
+--FSAA Level : 4 
+--------------
+GFXPCD3D9Device::reset - depthstencil 7a851c0 has 2 ref's
+--- Resetting D3D Device ---
+GFXPCD3D9Device::reset - depthstencil d0a7240 has 2 ref's
+--- Resetting D3D Device ---
+parse error
+AntiAliasing has been disabled; it is not compatible with AdvancedLighting.
+Exporting server prefs...
+Executing data/spectatorGameplay/scripts/datablocks/camera.cs.
+Executing data/spectatorGameplay/scripts/datablocks/defaultParticle.cs.
+Executing data/spectatorGameplay/scripts/datablocks/lights.cs.
+Executing data/spectatorGameplay/scripts/datablocks/managedDatablocks.cs.
+Executing data/spectatorGameplay/scripts/datablocks/managedDecalData.cs.
+Executing data/spectatorGameplay/scripts/datablocks/managedForestItemData.cs.
+Executing data/spectatorGameplay/scripts/datablocks/managedParticleData.cs.
+Executing data/spectatorGameplay/scripts/datablocks/managedParticleEmitterData.cs.
+Executing data/spectatorGameplay/scripts/datablocks/markers.cs.
+Executing data/spectatorGameplay/scripts/datablocks/ribbons.cs.
+Executing data/spectatorGameplay/scripts/datablocks/sounds.cs.
+Executing data/spectatorGameplay/scripts/datablocks/simplePlayer.cs.
+Executing data/spectatorGameplay/art/GameShapes/player.cs.
+[Win32FileSystemChangeNotifier::internalAddNotification] : failed on [C:\Speciale\Game\SharpShooter-Deploy\core\art\shapes] [3]
+Resource<TSShape>::create - Could not open 'core/art/shapes/unit_cube.dts'
+Failed to create resource: [core/art/shapes/unit_cube.dts]
+TSShape::createMesh: Could not load source mesh from core/art/shapes/unit_cube.dts
+[Win32FileSystemChangeNotifier::internalAddNotification] : failed on [C:\Speciale\Game\SharpShooter-Deploy\core\art\shapes] [3]
+Resource<TSShape>::create - Could not open 'core/art/shapes/unit_cube.dts'
+Failed to create resource: [core/art/shapes/unit_cube.dts]
+TSShape::createMesh: Could not load source mesh from core/art/shapes/unit_cube.dts
+[Win32FileSystemChangeNotifier::internalAddNotification] : failed on [C:\Speciale\Game\SharpShooter-Deploy\core\art\shapes] [3]
+Resource<TSShape>::create - Could not open 'core/art/shapes/unit_sphere.dts'
+Failed to create resource: [core/art/shapes/unit_sphere.dts]
+TSShape::createMesh: Could not load source mesh from core/art/shapes/unit_sphere.dts
+[Win32FileSystemChangeNotifier::internalAddNotification] : failed on [C:\Speciale\Game\SharpShooter-Deploy\core\art\shapes] [3]
+Resource<TSShape>::create - Could not open 'core/art/shapes/unit_cube.dts'
+Failed to create resource: [core/art/shapes/unit_cube.dts]
+TSShape::createMesh: Could not load source mesh from core/art/shapes/unit_cube.dts
+[Win32FileSystemChangeNotifier::internalAddNotification] : failed on [C:\Speciale\Game\SharpShooter-Deploy\core\art\shapes] [3]
+Resource<TSShape>::create - Could not open 'core/art/shapes/unit_sphere.dts'
+Failed to create resource: [core/art/shapes/unit_sphere.dts]
+TSShape::createMesh: Could not load source mesh from core/art/shapes/unit_sphere.dts
+[Win32FileSystemChangeNotifier::internalAddNotification] : failed on [C:\Speciale\Game\SharpShooter-Deploy\core\art\shapes] [3]
+Resource<TSShape>::create - Could not open 'core/art/shapes/unit_capsule.dts'
+Failed to create resource: [core/art/shapes/unit_capsule.dts]
+TSShape::createMesh: Could not load source mesh from core/art/shapes/unit_capsule.dts
+[Win32FileSystemChangeNotifier::internalAddNotification] : failed on [C:\Speciale\Game\SharpShooter-Deploy\core\art\shapes] [3]
+Resource<TSShape>::create - Could not open 'core/art/shapes/unit_capsule.dts'
+Failed to create resource: [core/art/shapes/unit_capsule.dts]
+TSShape::createMesh: Could not load source mesh from core/art/shapes/unit_capsule.dts
+[Win32FileSystemChangeNotifier::internalAddNotification] : failed on [C:\Speciale\Game\SharpShooter-Deploy\core\art\shapes] [3]
+Resource<TSShape>::create - Could not open 'core/art/shapes/unit_capsule.dts'
+Failed to create resource: [core/art/shapes/unit_capsule.dts]
+TSShape::createMesh: Could not load source mesh from core/art/shapes/unit_capsule.dts
+[Win32FileSystemChangeNotifier::internalAddNotification] : failed on [C:\Speciale\Game\SharpShooter-Deploy\core\art\shapes] [3]
+Resource<TSShape>::create - Could not open 'core/art/shapes/unit_cube.dts'
+Failed to create resource: [core/art/shapes/unit_cube.dts]
+TSShape::createMesh: Could not load source mesh from core/art/shapes/unit_cube.dts
+[Win32FileSystemChangeNotifier::internalAddNotification] : failed on [C:\Speciale\Game\SharpShooter-Deploy\core\art\shapes] [3]
+Resource<TSShape>::create - Could not open 'core/art/shapes/unit_cube.dts'
+Failed to create resource: [core/art/shapes/unit_cube.dts]
+TSShape::createMesh: Could not load source mesh from core/art/shapes/unit_cube.dts
+[Win32FileSystemChangeNotifier::internalAddNotification] : failed on [C:\Speciale\Game\SharpShooter-Deploy\core\art\shapes] [3]
+Resource<TSShape>::create - Could not open 'core/art/shapes/unit_sphere.dts'
+Failed to create resource: [core/art/shapes/unit_sphere.dts]
+TSShape::createMesh: Could not load source mesh from core/art/shapes/unit_sphere.dts
+[Win32FileSystemChangeNotifier::internalAddNotification] : failed on [C:\Speciale\Game\SharpShooter-Deploy\core\art\shapes] [3]
+Resource<TSShape>::create - Could not open 'core/art/shapes/unit_capsule.dts'
+Failed to create resource: [core/art/shapes/unit_capsule.dts]
+TSShape::createMesh: Could not load source mesh from core/art/shapes/unit_capsule.dts
+[Win32FileSystemChangeNotifier::internalAddNotification] : failed on [C:\Speciale\Game\SharpShooter-Deploy\core\art\shapes] [3]
+Resource<TSShape>::create - Could not open 'core/art/shapes/unit_cube.dts'
+Failed to create resource: [core/art/shapes/unit_cube.dts]
+TSShape::createMesh: Could not load source mesh from core/art/shapes/unit_cube.dts
+Executing data/SpectatorGameplay/scripts/datablocks/player.cs.
+Executing data/SpectatorGameplay/scripts/datablocks/obstacle.cs.
+*** LOADING MISSION: data/spectatorGameplay/levels/Empty_Room.mis
+*** Stage 1 load
+*** Stage 2 load
+Executing data/spectatorGameplay/levels/Empty_Room.mis.
+*** Mission loaded
+Connection established 17430
+CADD: 17431 local
+*** Sending mission load to client: data/spectatorGameplay/levels/Empty_Room.mis
+Started up in 3.21 seconds...
+Window focus status changed: focus: 1
+Mapping string: ServerMessage to index: 0
+Mapping string: MsgConnectionError to index: 1
+Mapping string: MsgLoadInfo to index: 2
+Mapping string: MsgLoadDescription to index: 3
+Mapping string: MsgLoadInfoDone to index: 4
+Mapping string: MissionStartPhase1 to index: 5
+*** New Mission: data/spectatorGameplay/levels/Empty_Room.mis
+*** Phase 1: Download Datablocks & Targets
+Mapping string: MissionStartPhase1Ack to index: 0
+Mapping string: MissionStartPhase2 to index: 6
+*** Phase 2: Download Ghost Objects
+Mapping string: MissionStartPhase2Ack to index: 1
+[Material::mapMaterial] - Cannot map unnamed Material
+Ghost Always objects received.
+Mapping string: MissionStartPhase3 to index: 7
+Client Replication Startup has Happened!
+fxFoliageReplicator - replicated client foliage for 0 objects
+*** Phase 3: Mission Lighting
+Mission lighting done
+Mapping string: MissionStartPhase3Ack to index: 2
+Mapping string: MissionStart to index: 8
+*** Initial Control Object
+Activating DirectInput...
+*** Control Object Changed
+Linux Compatibility Warning: postFx.hlsl != postFX.hlsl
+Mapping string: PlayerTexture=darkgreen_PlayerTexture to index: 9
+Mapping string: PlayerTexture=blue_PlayerTexture to index: 10
+Window focus status changed: focus: 0
+  Using background sleep time: 200
+DirectInput deactivated.
