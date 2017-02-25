@@ -24,8 +24,8 @@ namespace Turing
         public HarlemShakeState(State nextState, FeatureVector vector, int ticks)
         {
             this.nextState = nextState;
-            this.timeRun = ticks;
-            dir = vector.DeltaRot >= 0 ? TurnDirection.RIGHT : TurnDirection.LEFT;
+            timeRun = ticks;
+            dir = vector.TickCount % 2 == 0 ? TurnDirection.RIGHT : TurnDirection.LEFT;
         }
 
         public State tick(ref PlayerAction action, FeatureVector vector, StateController controller)
@@ -54,14 +54,14 @@ namespace Turing
                else
                {
                   action = dir == TurnDirection.LEFT ? PlayerAction.TurnLeft : PlayerAction.TurnRight;
-                  move = 10;
+                  move = 13;
                }
                rotations--;
            }
            else
            {
-               dir = vector.TickCount % 42 < 21 ? TurnDirection.RIGHT : TurnDirection.LEFT;
-               rotations = 20;
+               dir = dir == TurnDirection.LEFT ? TurnDirection.RIGHT : TurnDirection.LEFT;
+               rotations = 27;
            }
 
            //Keep looking
