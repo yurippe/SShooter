@@ -10,7 +10,7 @@ namespace Turing
 {
     class HuntState : State
     {
-        private int move = 10;
+        private int move = 0;
         private int rotations = 0;
         private TurnDirection dir = TurnDirection.LEFT;
 
@@ -61,7 +61,7 @@ namespace Turing
             {
                 action = PlayerAction.MoveForward;
                 move--;
-                rotations = 8;
+                rotations = 15;
             }
             else
             {
@@ -72,8 +72,9 @@ namespace Turing
                 }
                 else
                 {
+                    action = PlayerAction.MoveForward;
                     dir = dir == TurnDirection.LEFT ? TurnDirection.RIGHT : TurnDirection.LEFT;
-                    move = 10;
+                    move = 30;
                 }
             }
 
