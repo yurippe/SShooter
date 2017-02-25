@@ -66,7 +66,7 @@ namespace Turing
         {
             if(vector.DamageProb >= 0.8f && vector.ShootDelay == 0)
             {
-                return new ShootDamnItState(currentState);
+                return new ShootDamnItState(new PrepState(new HuntState()));
             }
 
             return null;
