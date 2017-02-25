@@ -8,14 +8,11 @@ using Torque3D.Util;
 
 namespace Turing
 {
-    class InitialState : State
+    class NOPState : State
     {
         public State tick(ref PlayerAction action, FeatureVector vector, StateController controller)
         {
-            action = PlayerAction.Prepare;
-
-            return new TurnXDegreesState(new NOPState(), TurnXDegreesState.TurnDirection.RIGHT, 45);
-
+            return this;
         }
     }
 }

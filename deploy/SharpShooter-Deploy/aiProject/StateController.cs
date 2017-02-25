@@ -18,6 +18,7 @@ namespace Turing
         public void tick(ref PlayerAction action, FeatureVector vector)
         {
             currentState = currentState.tick(ref action, vector, this);
+            previousFeatureVector = vector;
         }
 
 
