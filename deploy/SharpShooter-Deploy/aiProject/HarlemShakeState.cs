@@ -60,7 +60,7 @@ namespace Turing
            }
            else
            {
-               dir = dir == TurnDirection.LEFT ? TurnDirection.RIGHT : TurnDirection.LEFT;
+               dir = vector.TickCount % 42 < 21 ? TurnDirection.RIGHT : TurnDirection.LEFT;
                rotations = 20;
            }
 
