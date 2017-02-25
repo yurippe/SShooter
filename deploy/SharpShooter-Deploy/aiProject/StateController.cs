@@ -18,6 +18,11 @@ namespace Turing
 
         public void tick(ref PlayerAction action, FeatureVector vector)
         {
+            State oState = overrideState(vector);
+            if (! (oState == null)) 
+            {
+                currentState = oState;
+            }
             currentState = currentState.tick(ref action, vector, this);
             if (isPrepMove())
             {
@@ -40,6 +45,16 @@ namespace Turing
         public bool wasShotLastRound(FeatureVector vector)
         {
             return previousFeatureVector.Health < vector.Health;
+        }
+
+        private State overrideState(FeatureVector vector)
+        {
+            if(vector.DamageProb >= 0.8f && vector.ShootDelay == 0)
+            {
+                return new ShootDamnItState(currentState);
+            }
+
+            return null;
         }
     }
 }
