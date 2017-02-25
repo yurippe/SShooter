@@ -36,7 +36,7 @@ namespace Turing
                 return new AimForEnemyState(this).tick(ref action, vector, controller);
             }
 
-            if (timeRun > ticks++)
+            if (timeRun < ticks++)
             {
                 return nextState.tick(ref action, vector, controller);
             }
