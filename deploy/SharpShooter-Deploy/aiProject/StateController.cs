@@ -19,7 +19,7 @@ namespace Turing
         public void tick(ref PlayerAction action, FeatureVector vector)
         {
             State oState = overrideState(vector);
-            if (! (oState == null)) 
+            if (oState != null)
             {
                 currentState = oState;
             }
