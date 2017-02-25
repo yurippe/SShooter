@@ -27,15 +27,9 @@ namespace Turing
         public State tick(ref PlayerAction action, FeatureVector vector, StateController controller)
         {
             //We see the enemy, let's engage
-            if (vector.DamageProb > 0)
+            if (vector.DamageProb > 0 && vector.ShootDelay <3)
             {
-                //Close to shooting
-                if(vector.ShootDelay <3)
-                    return new AimForEnemyState(this).tick(ref action, vector, controller);
-
-                //While reloading, let's get closers
-                action = PlayerAction.MoveForward;
-                return new PrepState(this);
+                return new AimForEnemyState(this).tick(ref action, vector, controller);
             }
 
             if (vector.TicksSinceObservedEnemy < 40)
