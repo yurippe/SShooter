@@ -48,6 +48,7 @@
     <Compile Include="AimForEnemyState.cs" />
     <Compile Include="HuntState.cs" />
     <Compile Include="InitialState.cs" />
+    <Compile Include="DodgeState.cs" />
     <Compile Include="NOPState.cs" />
     <Compile Include="PrepState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
