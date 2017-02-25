@@ -54,6 +54,7 @@ namespace Turing
             if (move)
             {
                 action = PlayerAction.MoveForward;
+                move = false;
             }
             else
             {
@@ -67,8 +68,9 @@ namespace Turing
                     action = PlayerAction.TurnRight;
                     dir = TurnDirection.LEFT;
                 }
+                move = false;
             }
-            
+
             //Keep hunting him down
             return new PrepState(this);
         }
