@@ -21,7 +21,7 @@ namespace Turing
             public State tick(ref PlayerAction action, FeatureVector vector, StateController controller)
             {
                 float leftDistance = vector.DistanceToObstacleLeft;
-                float rightDistance = vector.DistanceToObstacleRight
+                float rightDistance = vector.DistanceToObstacleRight;
 
                 if (leftDistance > CRITICAL_DISTANCE && rightDistance > CRITICAL_DISTANCE)
                 {
