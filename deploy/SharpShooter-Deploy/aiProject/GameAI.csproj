@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="AIClass.cs" />
     <Compile Include="AimForEnemyState.cs" />
+    <Compile Include="BreakoutState.cs" />
     <Compile Include="HuntState.cs" />
     <Compile Include="InitialState.cs" />
     <Compile Include="HarlemShakeState.cs" />

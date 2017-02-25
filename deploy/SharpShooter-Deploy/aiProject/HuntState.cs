@@ -48,7 +48,8 @@ namespace Turing
                 float angle = 20F;
                 if (rotationCount++ > 2)
                 {
-                    angle = 180F;
+                    rotationCount = 0;
+                    return new BreakoutState(this, vector, 20);
                 }
                 else if (leftDistance < CRITICAL_DISTANCE && rightDistance < CRITICAL_DISTANCE)
                 {
