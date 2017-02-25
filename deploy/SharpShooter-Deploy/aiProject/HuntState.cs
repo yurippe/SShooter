@@ -14,6 +14,7 @@ namespace Turing
         {
             //TODO: Do all wavering searching
 
+
             //TODO: If at a wall then rotate randomly
 
             //TODO: If about changing to sidestepping

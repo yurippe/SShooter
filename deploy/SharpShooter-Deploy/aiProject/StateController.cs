@@ -14,31 +14,41 @@ namespace Turing
         private State currentState = new InitialState();
         private FeatureVector previousFeatureVector;
 
-        private bool hasPrep = false;
+        private int isPrepTick = 0;
+        private bool prepping = false;
 
         public void tick(ref PlayerAction action, FeatureVector vector)
         {
             State oState = overrideState(vector);
-            if (! (oState == null)) 
-            {
+            if (! (oState == null))  {
                 currentState = oState;
             }
+
             currentState = currentState.tick(ref action, vector, this);
-            if (isPrepMove())
-            {
-                hasPrep = false;
+            if (isPrepTick > 0) {
+                isPrepTick -= 1;
             }
+
             previousFeatureVector = vector;
-            if(action == PlayerAction.Prepare)
-            {
-                hasPrep = true;
+
+            if (action == PlayerAction.Prepare) {
+                prepping = true;
+            }
+            if(prepping && isPrepTick == 0) {
+                isPrepTick = 2;
+                prepping = false;
             }
         }
 
 
         public bool isPrepMove()
         {
-            return hasPrep;
+            return 2 == isPrepTick;
+        }
+
+        public bool hasPrepped()
+        {
+            return prepping;
         }
 
 
