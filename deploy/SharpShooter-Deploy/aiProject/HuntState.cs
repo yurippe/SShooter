@@ -12,12 +12,10 @@ namespace Turing
     {
         public State tick(ref PlayerAction action, FeatureVector vector, StateController controller)
         {
-            if (controller.isPrepMove() && !controller.hasPrepped())
+            if (vector.DamageProb > 0)
             {
-                action = PlayerAction.Prepare;
-                return this;
+                return new AimForEnemyState(this).tick(ref action, vector, controller);
             }
-
 
             //TODO: If at a wall then rotate randomly
             float leftDistance = vector.DistanceToObstacleLeft;

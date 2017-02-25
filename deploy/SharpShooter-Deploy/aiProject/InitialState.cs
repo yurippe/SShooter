@@ -13,8 +13,7 @@ namespace Turing
         public State tick(ref PlayerAction action, FeatureVector vector, StateController controller)
         {
             action = PlayerAction.Prepare;
-
-            return new TurnXDegreesState(new AimForEnemyState(new NOPState()), TurnXDegreesState.TurnDirection.RIGHT, 45);
+            return new PrepState(new HuntState());
         }
     }
 }
