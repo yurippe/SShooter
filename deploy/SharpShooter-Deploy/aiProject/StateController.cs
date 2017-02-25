@@ -64,7 +64,13 @@ namespace Turing
 
         private State overrideState(FeatureVector vector)
         {
-            if(vector.DamageProb >= 0.8f && vector.ShootDelay == 0)
+
+            if (vector.TickCount == 3200)
+            {
+                return new InitialState();
+            }
+
+            if (vector.DamageProb >= 0.8f && vector.ShootDelay == 0)
             {
                 return new ShootDamnItState(new PrepState(new HuntState()));
             }
