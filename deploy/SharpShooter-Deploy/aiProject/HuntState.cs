@@ -10,7 +10,8 @@ namespace Turing
 {
     class HuntState : State
     {
-        private bool move = false;
+        private int move = 5;
+        private int rotations = 0;
         private TurnDirection dir = TurnDirection.LEFT;
 
         public enum TurnDirection { RIGHT, LEFT }
@@ -51,24 +52,23 @@ namespace Turing
             }
 
             //Should we move or rotate this time?
-            if (move)
+            if (move > 0)
             {
                 action = PlayerAction.MoveForward;
-                move = false;
+                move--;
+                rotations = 3;
             }
             else
             {
-                if (dir == TurnDirection.LEFT)
+                if (rotations > 0)
                 {
-                    action = PlayerAction.TurnLeft;
-                    dir = TurnDirection.RIGHT;
+                    action = dir == TurnDirection.LEFT ? PlayerAction.TurnLeft : PlayerAction.TurnRight;
                 }
                 else
                 {
-                    action = PlayerAction.TurnRight;
-                    dir = TurnDirection.LEFT;
+                    dir = dir == TurnDirection.LEFT ? TurnDirection.RIGHT : TurnDirection.LEFT;
+                    move = 5;
                 }
-                move = false;
             }
 
             //Keep hunting him down
