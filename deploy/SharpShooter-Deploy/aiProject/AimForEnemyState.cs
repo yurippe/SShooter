@@ -59,7 +59,7 @@ namespace Turing
             } else
             {
               action = PlayerAction.Prepare;
-              return this;
+              return nextState;
             }
         }
     }
