@@ -10,14 +10,18 @@ namespace Turing
 {
     class LoopAimUntillFindState : AimForEnemyState
     {
-
-        public LoopAimUntillFindState() : base(null)
+        private int startTick;
+        public LoopAimUntillFindState(int startTick) : base(null)
         {
-
+            this.startTick = startTick;
         }
 
-        override protected State getNextState()
+        override protected State getNextState(FeatureVector vector)
         {
+            if(vector.TickCount >= startTick + 150)
+            {
+                return new HuntState();
+            }
             return this;
         }
     }

@@ -70,14 +70,14 @@ namespace Turing
                 return new InitialState();
             }
 
-            if (vector.DamageProb >= 0.8f && vector.ShootDelay == 0)
+            if (vector.DamageProb >= 0.8f && vector.ShootDelay <= 1)
             {
                 return new ShootDamnItState(new PrepState(new HuntState()));
             }
 
             if (vector.TickCount > 2 && wasShotLastRound(vector) && vector.ShootDelay < 5)
             {
-                return new PrepState(new LoopAimUntillFindState());
+                return new PrepState(new LoopAimUntillFindState(vector.TickCount));
             }
 
             return null;

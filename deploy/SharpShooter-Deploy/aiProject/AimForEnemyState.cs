@@ -59,12 +59,16 @@ namespace Turing
             } else
             {
               action = PlayerAction.Prepare;
-              return getNextState();
+              return getNextState(vector);
             }
         }
 
-        virtual protected State getNextState()
+        virtual protected State getNextState(FeatureVector vector)
         {
+            if(nextState == null)
+            {
+                return this;
+            }
             return nextState;
         }
     }
