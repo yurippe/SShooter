@@ -51,6 +51,10 @@ namespace Turing
             return prepping;
         }
 
+        public FeatureVector getPreviousFeatureVector()
+        {
+            return this.previousFeatureVector;
+        }
 
         public bool wasShotLastRound(FeatureVector vector)
         {
