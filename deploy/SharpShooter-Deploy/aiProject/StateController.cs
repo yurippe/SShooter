@@ -14,13 +14,27 @@ namespace Turing
         private State currentState = new InitialState();
         private FeatureVector previousFeatureVector;
 
+        private bool hasPrep = false;
 
         public void tick(ref PlayerAction action, FeatureVector vector)
         {
             currentState = currentState.tick(ref action, vector, this);
+            if (isPrepMove())
+            {
+                hasPrep = false;
+            }
             previousFeatureVector = vector;
+            if(action == PlayerAction.Prepare)
+            {
+                hasPrep = true;
+            }
         }
 
+
+        public bool isPrepMove()
+        {
+            return hasPrep;
+        }
 
 
         public bool wasShotLastRound(FeatureVector vector)
