@@ -18,6 +18,7 @@ namespace Turing
                 action = PlayerAction.Prepare;
             }
 
+
             //TODO: If at a wall then rotate randomly
             float leftDistance = vector.DistanceToObstacleLeft;
             float rightDistance = vector.DistanceToObstacleRight;
