@@ -59,15 +59,11 @@ namespace Turing
 
         public bool wasShotLastRound(FeatureVector vector)
         {
-            return previousFeatureVector.Health < vector.Health;
+            return previousFeatureVector.Health > vector.Health;
         }
 
         private State overrideState(FeatureVector vector)
         {
-            if (vector.TickCount > 2 && wasShotLastRound(vector))
-            {
-                return new LoopAimUntillFindState();
-            }
 
             if (vector.TickCount == 3200)
             {
@@ -77,6 +73,11 @@ namespace Turing
             if (vector.DamageProb >= 0.8f && vector.ShootDelay == 0)
             {
                 return new ShootDamnItState(new PrepState(new HuntState()));
+            }
+
+            if (vector.TickCount > 2 && wasShotLastRound(vector) && vector.ShootDelay < 5)
+            {
+                return new PrepState(new LoopAimUntillFindState());
             }
 
             return null;

@@ -63,7 +63,7 @@ namespace Turing
             }
         }
 
-        protected State getNextState()
+        virtual protected State getNextState()
         {
             return nextState;
         }

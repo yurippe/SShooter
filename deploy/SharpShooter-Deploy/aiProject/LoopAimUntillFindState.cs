@@ -15,7 +15,8 @@ namespace Turing
         {
 
         }
-        new protected State getNextState()
+
+        override protected State getNextState()
         {
             return this;
         }
