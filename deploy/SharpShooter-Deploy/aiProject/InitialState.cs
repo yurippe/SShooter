@@ -10,9 +10,9 @@ namespace Turing
 {
     class InitialState : State
     {
-        public State tick(ref PlayerAction action, FeatureVector vector)
+        public State tick(ref PlayerAction action, FeatureVector vector, StateController controller)
         {
-            action = PlayerAction.MoveForward;
+            action = PlayerAction.Prepare;
             return this;
         }
     }

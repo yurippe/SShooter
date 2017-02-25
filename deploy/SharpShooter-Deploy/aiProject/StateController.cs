@@ -12,10 +12,19 @@ namespace Turing
     {
 
         private State currentState = new InitialState();
+        private FeatureVector previousFeatureVector;
+
 
         public void tick(ref PlayerAction action, FeatureVector vector)
         {
-            currentState = currentState.tick(ref action, vector);
+            currentState = currentState.tick(ref action, vector, this);
+        }
+
+
+
+        public bool wasShotLastRound(FeatureVector vector)
+        {
+            return previousFeatureVector.Health < vector.Health;
         }
     }
 }
