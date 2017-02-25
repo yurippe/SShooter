@@ -8,12 +8,14 @@ using Torque3D.Util;
 
 namespace Turing
 {
-    class InitialState : State
+    class StateController
     {
-        public State tick(ref PlayerAction action, FeatureVector vector)
+
+        private State currentState = new InitialState();
+
+        public void tick(ref PlayerAction action, FeatureVector vector)
         {
-            action = PlayerAction.MoveForward;
-            return this;
+            currentState = currentState.tick(ref action, vector);
         }
     }
 }

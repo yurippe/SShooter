@@ -3,18 +3,18 @@ using Torque3D;
 using Torque3D.Engine.Util.Enums;
 using Torque3D.Util;
 
-namespace GameAI
+namespace Turing
 {
    public class AIClass
    {
 
-      private State currentState = new InitialState();
+      static private StateController stateController = new StateController();
 
       [ConsoleFunction]
-      public static PlayerAction MyThinkMethod(FeatureVector vector)
+      public static PlayerAction Turing(FeatureVector vector)
       {
             PlayerAction pAction = PlayerAction.Prepare;
-            currentState = currentState.tick(ref pAction, vector);
+            stateController.tick(ref pAction, vector);
             return pAction;
       }
    }
