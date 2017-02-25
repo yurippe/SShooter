@@ -59,8 +59,15 @@ namespace Turing
             } else
             {
               action = PlayerAction.Prepare;
-              return nextState;
+              return getNextState();
             }
         }
+
+        protected State getNextState()
+        {
+            return nextState;
+        }
     }
+
+
 }
