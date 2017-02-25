@@ -29,20 +29,19 @@ namespace Turing
 
                 //While reloading, let's get closer
                 //TODO: Make a more fancy "getting" close state
-                action = PlayerAction.MoveForward;
-                return new PrepState(this);
+                return new DodgeState(new PrepState(this), vector, 7).tick(ref action, vector, controller);
             }
 
             if (vector.TicksSinceObservedEnemy < 5)
             {
                 rotationCount = 0;
-                return new DodgeState(new PrepState(this), vector, 40);
+                return new DodgeState(new PrepState(this), vector, 40).tick(ref action, vector, controller);
             }
 
             //If at a wall then rotate
             float leftDistance = vector.DistanceToObstacleLeft;
             float rightDistance = vector.DistanceToObstacleRight;
-            int CRITICAL_DISTANCE = 5;
+            const int CRITICAL_DISTANCE = 5;
 
             if (leftDistance < CRITICAL_DISTANCE || rightDistance < CRITICAL_DISTANCE)
             {
@@ -69,7 +68,7 @@ namespace Turing
             {
                 action = PlayerAction.MoveForward;
                 move--;
-                rotations = 15;
+                rotations = 20;
             }
             else
             {
