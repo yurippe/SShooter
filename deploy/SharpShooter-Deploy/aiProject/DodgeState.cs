@@ -10,11 +10,12 @@ namespace Turing
 {
     class DodgeState : State
     {
-        private bool move = false;
+        private int move = 0;
         private int rotations = 10;
         private TurnDirection dir;
 
-        private int ticks;
+        private int ticks = 0;
+        private int timeRun;
 
         private State nextState;
 
@@ -23,7 +24,7 @@ namespace Turing
         public DodgeState(State nextState, FeatureVector vector, int ticks)
         {
             this.nextState = nextState;
-            this.ticks = ticks;
+            this.timeRun = ticks;
             dir = vector.DeltaRot >= 0 ? TurnDirection.RIGHT : TurnDirection.LEFT;
         }
 
@@ -35,22 +36,25 @@ namespace Turing
                 return new AimForEnemyState(this).tick(ref action, vector, controller);
             }
 
-            if (vector.TicksSinceObservedEnemy > ticks)
+            if (timeRun > ticks++)
             {
-                return nextState;
+                return nextState.tick(ref action, vector, controller);
             }
 
             if (rotations > 0)
             {
-               if (move)
+               if (move > 0)
                {
-                   action = dir == TurnDirection.LEFT ? PlayerAction.MoveRight : PlayerAction.MoveLeft;
-                   move = false;
+                   if(move == 1)
+                       action = PlayerAction.MoveForward;
+                   else
+                       action = dir == TurnDirection.LEFT ? PlayerAction.MoveRight : PlayerAction.MoveLeft;
+                   move--;
                }
                else
                {
                   action = dir == TurnDirection.LEFT ? PlayerAction.TurnLeft : PlayerAction.TurnRight;
-                  move = true;
+                  move = 6;
                }
                rotations--;
            }
